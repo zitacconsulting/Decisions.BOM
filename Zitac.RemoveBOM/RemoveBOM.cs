@@ -7,7 +7,8 @@ namespace Zitac.RemoveBOM
 {
 
     [AutoRegisterMethodsOnClass(true, "File Management", "BOM")]
-    public class RemoveBOMSteps {
+    public class RemoveBOMSteps
+    {
 
         public byte[] RemoveBOM(byte[] File)
         {
@@ -22,7 +23,7 @@ namespace Zitac.RemoveBOM
         {
             var enc = new UTF8Encoding(true);
             var preamble = enc.GetPreamble();
-            if (preamble.Where((p, i) => p != File[i]).Any()) 
+            if (preamble.Where((p, i) => p != File[i]).Any())
                 return false;
             else
                 return true;
@@ -34,6 +35,15 @@ namespace Zitac.RemoveBOM
                 var bytesWithBOM = new UTF8Encoding(true).GetBytes(sr.ReadToEnd());
                 return bytesWithBOM;
             }
+        }
+
+        public byte[] ConvertStringToUtf8Bom(string source)
+        {
+            var data = Encoding.UTF8.GetBytes(source);
+            var result = Encoding.UTF8.GetPreamble().Concat(data).ToArray();
+
+
+            return result;
         }
     }
 }
