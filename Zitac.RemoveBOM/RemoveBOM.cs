@@ -27,5 +27,13 @@ namespace Zitac.RemoveBOM
             else
                 return true;
         }
+        public byte[] AddBOM(byte[] File)
+        {
+            using (StreamReader sr = new StreamReader(new MemoryStream(File), Encoding.UTF8))
+            {
+                var bytesWithBOM = new UTF8Encoding(true).GetBytes(sr.ReadToEnd());
+                return bytesWithBOM;
+            }
+        }
     }
 }
