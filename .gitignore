@@ -1,2 +1,4 @@
 .vscode/tasks.json
 Zitac.RemoveBOM/obj
+Zitac.RemoveBOM/bin
+Zitac.RemoveBOM/bin/*

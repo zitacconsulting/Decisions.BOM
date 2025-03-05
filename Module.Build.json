@@ -4,7 +4,9 @@
         "CoreServicesDlls": [
             "./Zitac.RemoveBOM/bin/Zitac.RemoveBOM.dll"
         ],
-        "CustomImages": null,
+        "CustomImages": [
+            "bom.svg"
+        ],
         "CliDlls": null,
         "WebPages": null,
         "SilverlightDlls": null,
@@ -14,7 +16,7 @@
         "ObjectsToImport": null,
         "MsSqlScript": null
     },
-    "Version": "9.4.0",
-    "ImagePath": "bom.png",
+    "Version": "9.7.0",
+    "ImagePath": "bom.svg",
     "Description": "This module adds steps to control BOM on text files"
 }
